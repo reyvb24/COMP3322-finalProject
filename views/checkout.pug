@@ -1,0 +1,65 @@
+doctype html
+html
+    head 
+        title Checkout
+        link(rel="stylesheet", href="stylesheets/checkout.css")
+        link(rel="icon", href="/images/icons8-music-30.png")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        script(src="javascripts/checkout.js")
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    body 
+        form#checkout-form(onsubmit="validate(event, this)" action="/invoice" method="post") 
+            section#check-login.active-check-login 
+                #new-customer
+                    h2 I'm a new customer 
+                    p Please Checkout Below
+                p   Or
+                #already-customer
+                    h2 I'm already a customer 
+                    a(href="/login") Sign In
+            section#create-account.active 
+                h2 Create Account: 
+                label(for="username") Username:
+                span#username-holder
+                    input(type="text" placeholder="Desired Username" name="username" id="username" pattern="[A-Za-z][A-Za-z0-9_-]+")
+                    #err
+            
+                label(for="password") Password:
+                input(type="password" placeholder="Desired Password" name="password" id="password" pattern=".{8}.*")
+            section#delivery-info 
+                h2 Delivery Address:
+                input(type="hidden" name="price" id="price")
+                input(type="hidden" name="carts" id="carts")
+                label(for="fullname") Full Name:
+                input(type="text" placeholder="Required" name="fullname" id="fullname" required)
+                label(for="company") Company name:
+                input(type="text" name="company" id="company")
+                label(for="address") Address Line 1:
+                input(type="text" placeholder="Required" name="address" id="address" required)
+                
+                label(for="address2") Address Line 2:
+                input(type="text" placeholder="" name="address2" id="address2")
+            
+                label(for="city") City:
+                input(type="text" placeholder="Required" name="city" id="city" required)
+            
+                label(for="region") Region State District:
+                input(type="text" placeholder="" name="region" id="region")
+            
+                label(for="country") Country:
+                input(type="text" placeholder="Required" name="country" id="country" required)
+            
+                label(for="zipcode") Postcode Zip Code:
+                input(type="text" placeholder="Required" name="zipcode" id="zipcode" required)
+            input#submit-form(type="submit" value="Confirm")
+        section#review-order 
+            p Your order:
+            p <b>Free Standard Shipping</b>
+            #orders 
+            b
+                p#total-price Total Price: HK$
+            p Click <a href='/cart'>here</a> to change your order
+        script.
+            const loggedIn = '#{loggedIn}'?'#{loggedIn}':undefined;
+            const userId = '#{userId}'?'#{userId}':undefined;
+         

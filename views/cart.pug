@@ -1,0 +1,16 @@
+extends layout 
+block link
+    link(rel="stylesheet", href="../stylesheets/cart.css")
+block script 
+    script(src="../javascripts/cartHandling.js") 
+block content 
+    h1= title
+    #cart-holder
+    .cart-card#totalprice
+        #total-price
+    #button-holder 
+        button.nav-button.cart-button#back-button(type='button') Back 
+        button.nav-button.cart-button#checkout-button(type='button') Checkout
+    script. 
+        console.log('#{userId}');
+        const userId = '#{userId}'?'#{userId}':undefined;

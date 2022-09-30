@@ -1,0 +1,22 @@
+head 
+    meta(charset="UTF-8")
+body 
+    form(action="../users/upload" method="post") 
+        input#musicName(type="text" name="musicName" placeholder="musicName")
+        input#category(type="text" name="category" placeholder="category")
+        input#composer(type="text" name="composer" placeholder="composer")
+        input#description(type="text" name="description" placeholder="description")
+        input#image(type="text" name="image" placeholder="image path")
+        input#mp3(type="text" name="mp3" placeholder="mp3 path")
+        label(for="price") price: 
+        input#price(type="number" name="price")
+        input#published(type="text" placeholder="date" name="date")
+        select#newArrival(name="newArrival")
+            option(value="True") True
+            option(value="False") False  
+        //- label(for="image") Image:
+        //- input#image(type="file" name="media")
+        //- label(for="mp3") MP3:
+        //- input#mp3(type="file" name="media")
+        input(type="submit")
+    

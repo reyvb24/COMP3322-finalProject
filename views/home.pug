@@ -1,0 +1,29 @@
+extends layout
+block link
+  link(rel="stylesheet", href="../stylesheets/home.css")
+block script 
+  script(src="../javascripts/home.js") 
+block nav-child 
+  section#categories
+    h3#category Category
+    each category in categories
+      a.category(href="/"+category)= category
+block content
+  section#contents
+    section#results 
+      #paths 
+        a(href="/") Home 
+      h2#result-title All Music
+      #results-musics
+  script.
+    let userId = '#{userId}'
+    let category = '#{selectedCategory}'
+    const keywordsPassed = '#{keywords}';
+    if(category) {
+      $('#result-title').text('All '+category)
+      $('#paths').html(`
+        <a href="/">Home</a>
+        <p>&gt</p>
+        <a href="/${category}">${category}</a>
+      `)
+    }    

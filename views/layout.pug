@@ -1,0 +1,73 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="icon", href="/images/icons8-music-30.png")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    block link
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js') 
+    script(src='../javascripts/searchResult.js')
+    block script
+  body
+    nav#navbar 
+      .row 
+        #nav-container
+          a(href="/login") Sign in 
+          a(href="/signup") Register 
+          #cart-nav
+            button#cart-button.nav-button(type='button', class='buttons') Cart  
+            p 0
+
+      .row
+        #search-bar
+          input#search-keywords(type="text" placeholder="Keyword(s)")
+          button#search-button.nav-button(type='button', class='buttons') Search
+      block nav-child
+    block content
+    script.
+      let navContainer = document.querySelector("#nav-container");
+      if ('#{loggedIn}') {
+        navContainer.innerHTML = `
+        <a href='/logout'>Log Out</a>
+        <div id="cart-nav">
+          <button type='button'id="cart-button" class='nav-button buttons'>Cart</button>
+          <p>0</p>
+        </div>
+        `
+      }
+
+      $('#cart-nav').on('click', () => {
+        console.log("CART")
+        window.location.href = '/cart';
+      });
+
+      if ('#{isHome}'!=='true') {
+        console.log("NOT HOME")
+        $('#search-bar').html(
+          `
+          <form id="search-form" action="/" method="POST">
+            <input id="search-keywords" name="keywords" type="text" placeholder="Keyword(s)">
+            <input id="search-button" type="submit" class="nav-button buttons" value="Search">
+          </form>
+          `
+        )
+      }
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          console.log(screen.height);
+          document.getElementById("navbar").style.top = "0";
+          if (document.querySelector("#categories"))
+            document.querySelector("#categories").style.top = "110px";
+        } else {
+          if (screen.height<=600) {
+            document.getElementById("navbar").style.top = "-150px";
+            if (document.querySelector("#categories"))
+              document.querySelector("#categories").style.top = "0";
+          }
+        }
+        prevScrollpos = currentScrollPos;
+      }
+    script(src='../javascripts/dynamicAmount.js')

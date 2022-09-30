@@ -1,0 +1,32 @@
+extends layout
+block link
+  link(rel="stylesheet", href="./stylesheets/validate.css")
+block script 
+  script(src="./javascripts/validate.js") 
+block content
+  #bg-page
+    img#background(src="./images/background-login.png", alt="Background not available")
+  section#login-section
+    h1= title
+    form#login-form(action="/login", method="post") 
+      .input-placeholder
+        label(for="username") Username:
+        input#username(type="text" placeholder="Enter your username here..." name="username" pattern="[A-Za-z][A-Za-z0-9_-]*" required)
+      .input-placeholder
+        label(for="password") Password:
+        input#password(type="password" placeholder="Type your password here..." pattern=".{8}.*" name="password" required) 
+        p#err-message(style="color:red;")= error?error:''
+      .input-placeholder
+        p If you don't have an account yet, #[a(href="/signup") Sign Up Here] 
+      .row.justify-space 
+        input#submit-form.primary-button.button(type="submit" value="Log In")
+        a.button(href="/signup") #[input.secondary-button(type="button" value="CREATE")]
+  script.
+    $('#submit-form').on('click', function(event) {
+        if ($('#username').val()===''||$('#password').val()==='') {
+          alert("Please do not leave the fields empty");
+        }
+    });
+    window.onload = () => {
+      $('#err-message').text()==='Account created! Welcome'?$('#err-message').css('color', 'green'):''
+    }

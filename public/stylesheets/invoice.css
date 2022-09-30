@@ -1,0 +1,60 @@
+body {
+    overflow:auto;
+    background-color: rgb(235, 235, 235);
+    padding: 5%;
+}
+
+h1 {
+    font-size: 24px;
+    width: 100%;
+    color: white;
+}
+
+
+#holder {
+    border-radius: 15px;
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+}
+
+#holder >p {
+    padding: 0 15px;
+}
+
+#invoice-title {
+    background-color: #231D68;
+    color: white;
+    padding: 15px;
+}
+
+#invoice-info> p{
+    padding: 0 15px;
+}
+
+#review-order {
+    padding: 0 15px
+}
+
+
+#confirm {
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+#confirm-button{
+    position: relative;
+    width: 40%;
+    color: white;
+    padding: 10px 50px;
+    background-color: #231D68;
+    border-radius: 15px;
+    text-decoration: none;
+    border: none;
+    font-size: medium;
+}

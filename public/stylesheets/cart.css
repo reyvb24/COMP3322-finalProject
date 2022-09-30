@@ -1,0 +1,153 @@
+:root {
+    --primary: rgb(99, 99, 99);
+    --secondary: #231D68;
+}
+
+body {
+    overflow:auto;
+    background-color: rgb(235, 235, 235);
+}
+
+#navbar {
+    position: sticky !important;
+    background-color: rgb(26, 29, 78) !important;
+}
+
+.cart-card {
+    position: relative;
+    background-color: white;
+    margin: 20px 30px;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+}
+
+.total-holder {
+    background-color: #231D68;
+    width: 100%;
+    color: white;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 20px;
+}
+
+.info-holder {
+    padding: 20px 20px;
+}
+
+.image-holder {
+    width: 20%;
+    height: 300px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.delete-button {
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+    margin-right: 50px;
+    width: 80px;
+}
+
+.image-holder>img {
+    max-height: 100%;
+    min-width: 100%;
+    padding: 0;
+    margin: auto;
+}
+
+.content-holder {
+    /* padding: 10px; */
+    height: 300px;
+    width: 80%;
+}
+
+#button-holder {
+    margin: 20px 30px;
+}
+
+.cart-button {
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
+    border: none;
+    margin-right: 50px;
+    width: 100px;
+}
+
+#totalprice {
+    background-color: var(--secondary);
+}
+
+#total-price {
+    /* width: 80%;
+    border-radius: 15px;
+    margin: 10px 5%; */
+    color: white;
+    padding: 10px;
+    /* background-color: black;
+    /* color: black;
+    box-sizing: border-box;
+    display: inline-block;
+    position: static; */ 
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 14px;
+    }
+
+    .total-holder {
+        background-color: #231D68;
+        width: 100%;
+        color: white;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        padding: 20px 20px;
+    }    
+
+    .content-holder {
+        /* padding: 10px; */
+        height: 250px;
+        width: 100%;
+    }
+
+    .info-holder {
+        padding-right: 22%;
+    }
+
+    .image-holder {
+        position: absolute;
+        right: 0;
+        width: 20%;
+        height: 150px;
+        background-color: black;
+        overflow: hidden;
+    }
+
+    .image-holder>img {
+        max-width: 100%;
+    }
+
+    .cart-card {
+        position: relative;
+        background-color: white;
+        margin: 20px 0;
+        border-radius: 0;
+        display: flex;
+        overflow: hidden;
+    }
+
+    #checkout-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #review-order {
+        width: 100%;
+    }
+}

@@ -1,0 +1,110 @@
+:root {
+    --primary: rgb(99, 99, 99);
+    --secondary: seashell;
+}
+
+body {
+    overflow:auto;
+    background-color: rgb(235, 235, 235);
+}
+
+#paths {
+    display: flex !important;
+    padding-left: 5%;
+    margin-top: 50px;
+}
+
+#paths>* {
+    margin: 0 5px 0 0;
+}
+
+#navbar {
+    position: sticky !important;
+    background-color: rgb(26, 29, 78) !important;
+}
+
+#musicInfo {
+    margin: 20px 5%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+}
+
+#music-audio {
+    display: flex !important;
+    justify-content: center;
+}
+
+#music-audio>audio {
+    width: 100%;
+}
+
+#musicInfo-image {
+    margin: 0 auto;
+}
+
+#left-info {
+    width: 40%;
+    background-color: white;
+    padding: 20px 20px;
+}
+
+#left-info>* {
+    display: block;
+}
+
+#right-info {
+    width: 60%;
+    padding: 20px 20px;
+    background-color: #231D68;
+    color:white;
+}
+/* #musicInfo>* {
+    display: flex;
+    padding: 10px 0;
+} */
+
+#musicInfo-image {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#submit-cart {
+    margin-top: 20px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
+    border: none;
+    margin-right: 50px;
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 14px;
+    }
+
+    #musicInfo {
+        display: flex;
+        flex-direction: column;   
+    }
+
+    #left-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #right-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #checkout-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #review-order {
+        width: 100%;
+    }
+}

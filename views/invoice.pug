@@ -1,0 +1,28 @@
+doctype html
+html
+    head 
+        title Invoice Page
+        link(rel="icon", href="/images/icons8-music-30.png")
+        link(rel="stylesheet", href="stylesheets/invoice.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        script(src="javascripts/invoice.js")
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    body 
+        #holder
+            section#invoice-info 
+                #invoice-title
+                    h1 Invoice
+                p <b>Full Name:</b> #{data.fullname} <b>Company:</b> #{data.company?data.company:'N/A'}
+                p <b>Address Line 1:</b> #{data.address}
+                p <b>Address Line 2:</b> #{data.address2?data.address2:'N/A'}
+                p <b>City:</b> #{data.city}   <b>Region</b>: #{data.region?data.region:'N/A'}  <b>Country:</b> #{data.country}
+                p <b>Postcode:</b> #{data.zipcode}
+            section#review-order 
+                #orders 
+                p#total-price Total Price: HK$#{data.price}
+            p Thanks for ordering. Your music will be delivered within 7 working days.
+            #confirm
+                input#confirm-button(type='button' value='OK')
+        script.
+            const loggedIn = '#{loggedIn}';
+            const userId = '#{userId}'?'#{userId}':undefined;

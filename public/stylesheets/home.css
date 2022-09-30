@@ -1,0 +1,231 @@
+:root {
+    --primary: rgb(14, 14, 63);
+    --secondary: rgb(35, 29, 104);
+}
+
+body {
+    overflow:auto;
+    min-height: 100vh;
+    background-color: rgb(235, 235, 235);
+}
+
+#navbar {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    background-color: rgb(26, 29, 78) !important;
+}
+
+#contents {
+    position:relative;
+    display: flex;
+    margin-left: 15%;
+    min-height: 100%;
+}
+
+#categories {
+    top: 110px;
+    position:fixed;
+    width: 15%;
+    padding-top: 40px;
+    background-color: rgb(31, 31, 31);
+    overflow: auto;
+    bottom: 0;
+    overflow-y: scroll;
+    /* background-color: rgb(236, 236, 236); */
+}
+
+.category {
+    display:block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.category:hover {
+    background-color: rgb(95, 95, 95);
+    color: white;
+}
+
+#paths {
+    /* display: block; */
+    display: flex;
+    padding-left: 20px;
+}
+
+#category {
+    color: white;
+    text-align: center;
+}
+
+#paths>* {
+    margin: 0 5px 0 0;
+}
+
+#results {
+    position: relative;
+    align-content: flex-start;
+    width: 90%;
+    padding: 40px 5% 0;
+    margin: 0 auto 2% 0;
+    height: 100%;
+}
+
+#result-title {
+    padding-top: 20px;
+    padding-left: 20px;
+    margin: 0;
+    overflow: auto;
+}
+
+#results-musics {
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(auto-fit, 150px); */
+    /* justify-content: space-evenly; */
+    align-content: flex-start;
+    /* display: flex; */
+
+    /* width: 80%; */
+    margin: 0 auto;
+    /* border: 5px solid red; */
+}
+
+.card-title {
+    padding: 20px 20px;
+    height: 80px;
+    
+}
+
+.card-title a{
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.card {
+    overflow: hidden;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.205);
+    width: 300px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 0;
+    background-color: white;
+    /* background-color: var(--secondary); */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: black;
+}
+
+.card-image>img {
+    width: 100%;
+}
+
+.card-content {
+    padding: 10px 20px;
+}
+
+@media screen and (max-width: 850px) {
+    html {
+        font-size: 14px;
+    }
+
+    #navbar {
+        padding: 20px 0 0 0;
+    }
+
+    #search-keywords {
+    margin-bottom: 20px;
+    }
+
+    #search-button {
+    margin-bottom: 20px;
+    }
+
+    #category {
+        display: none;
+    }
+
+    #results {
+        width: 100%;
+        padding: 20px 0 20px 0;
+    }
+
+    #contents {
+        margin-left: 0;
+    }
+
+    #categories {
+        position: sticky;
+        display: flex;
+        width: 100%;
+        bottom:auto;
+        overflow-x: scroll;
+        z-index: 5;
+        /* margin-top: 20px; */
+        padding: 0;
+    }
+
+    .category {
+        padding: 20px 20px;
+        border-bottom: none;
+    }
+
+    #results-musics {
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 0;
+        height: 270px;
+        position: relative;
+    }
+
+    .card-image {
+        height: 120px;
+        width: 120px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .card-title {
+        padding-right: 125px;
+        height: 120px;
+        background-color: var(--secondary);
+        box-sizing: border-box;
+    }
+
+    .card-title> a{
+        color: white;
+    }
+
+    #musicInfo {
+        display: flex;
+        flex-direction: column;   
+    }
+
+    #left-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #right-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #checkout-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #review-order {
+        width: 100%;
+    }
+}

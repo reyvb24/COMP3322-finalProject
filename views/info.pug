@@ -1,0 +1,32 @@
+extends layout 
+block link
+    link(rel="stylesheet", href="../stylesheets/info.css")
+block script 
+    script(src="../javascripts/info.js") 
+block content 
+    #paths 
+        a(href="/") Home 
+        p &gt 
+        a(href="/info/"+musicInfo._id) #{musicInfo.musicName}
+    section#musicInfo
+        #left-info
+            h1= musicInfo.musicName 
+            img#musicInfo-image(src="../"+musicInfo.image alt="Image not available")
+            //- iframe(src="../"+musicInfo.mp3 allow="autoplay" id="audio" style="display: none")
+            #music-audio
+                audio(controls autoplay)
+                    source(src="../"+musicInfo.mp3 type="audio/mp3")      
+        #right-info
+            p Composer: #{musicInfo.composer}
+            p Published: #{musicInfo.published}
+            p Category: #{musicInfo.category}
+            p Description: #{musicInfo.description}
+            p Price: $ #{musicInfo.price}
+            label(for="order") Order:
+                input#order(type="number" name="order" value='1' min='0')
+            input#submit-cart.nav-button(type="button" value="Add to Cart") 
+            #post-status
+    script.
+        let userId = '#{userId}'?'#{userId}':undefined;
+        let musicId = '#{musicInfo._id}';
+        //- const [composer, published, category]=
